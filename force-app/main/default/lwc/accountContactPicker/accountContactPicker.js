@@ -100,9 +100,4 @@ export default class AccountContactPicker extends LightningElement {
         this.isModalOpen = false;
     }
 
-    // Close Error
-    handleErrorClose() {
-        this.error = '';
-    }
-
 }

@@ -6,6 +6,7 @@
 **/
 import { LightningElement, api } from 'lwc';
 
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
 export default class EditFormModal extends LightningElement {
     @api recordId;
     @api objectApiName;
@@ -14,6 +15,16 @@ export default class EditFormModal extends LightningElement {
     }
     handleSubmitButtonClick() {
         this.template.querySelector('lightning-record-edit-form').submit();
-        this.dispatchEvent(new CustomEvent('close'));
+    }
+
+    handleSuccessClick(event) {
+        console.log(event.detail.id);
+        const success = new ShowToastEvent({
+            title: 'Contact ',
+            message: 'Record Updated Successfully',
+            variant: 'success',
+        });
+        this.dispatchEvent(success);
+        this.handleClose();
     }
 }

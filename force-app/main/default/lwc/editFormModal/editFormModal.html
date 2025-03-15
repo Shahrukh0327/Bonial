@@ -15,10 +15,20 @@
   >
     <div class="slds-modal__container">
       <div class="slds-modal__header">
-        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Edit Contact</h1>
+        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+          Edit Contact
+        </h1>
       </div>
-      <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-        <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId}>
+      <div
+        class="slds-modal__content slds-p-around_medium"
+        id="modal-content-id-1"
+      >
+        <lightning-record-edit-form
+          object-api-name={objectApiName}
+          record-id={recordId}
+          onsuccess={handleSuccessClick}
+          onsubmit={handleSubmitButtonClick}
+        >
           <lightning-input-field field-name="Name"></lightning-input-field>
           <lightning-input-field field-name="Title"></lightning-input-field>
           <lightning-input-field field-name="Email"></lightning-input-field>
@@ -32,7 +42,12 @@
           onclick={handleSubmitButtonClick}
           label="Save"
         ></lightning-button>
-        <lightning-button class="slds-button" variant="neutral" label="Close" onclick={handleClose}></lightning-button>
+        <lightning-button
+          class="slds-button"
+          variant="neutral"
+          label="Close"
+          onclick={handleClose}
+        ></lightning-button>
       </div>
     </div>
   </section>
